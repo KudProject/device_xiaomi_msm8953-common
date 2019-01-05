@@ -1,0 +1,8 @@
+[
+ {
+   "repository": "KudProject/proprietary_vendor_xiaomi",
+   "target_path": "vendor/xiaomi",
+   "remote": "github",
+   "revision": "pie"
+ }
+]
