@@ -68,6 +68,14 @@ if [ "$DEVICE" = "markw" ] || [ "$DEVICE" = "mido" ] || [ "$DEVICE" = "tiffany" 
     # Hax for cam configs
     CAMERA2_SENSOR_MODULES="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib/libmmcamera2_sensor_modules.so
     sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
+
+    # Hax for cam data location
+    MM_QCAMERA_DAEMON="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/bin/mm-qcamera-daemon
+    CAMERA_LIB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib
+    sed -i "s|/data/misc/camera/cam_socket|/data/vendor/qcam/cam_socket|g" "$MM_QCAMERA_DAEMON"
+    for CAMERA_LIB in libmmcamera2_cpp_module.so libmmcamera2_dcrf.so libmmcamera2_iface_modules.so libmmcamera2_imglib_modules.so libmmcamera2_mct.so libmmcamera2_pproc_modules.so libmmcamera2_q3a_core.so libmmcamera2_sensor_modules.so libmmcamera2_stats_algorithm.so libmmcamera2_stats_modules.so libmmcamera_dbg.so libmmcamera_imglib.so libmmcamera_pdafcamif.so libmmcamera_pdaf.so libmmcamera_tintless_algo.so libmmcamera_tintless_bg_pca_algo.so libmmcamera_tuning.so; do
+        sed -i "s|/data/misc/camera/|/data/vendor/qcam/|g" "$CAMERA_LIB_ROOT"/$CAMERA_LIB
+    done
 fi
 
 "$MY_DIR"/setup-makefiles.sh
