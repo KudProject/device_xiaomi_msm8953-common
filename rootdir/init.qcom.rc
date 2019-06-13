@@ -227,6 +227,7 @@ on post-fs-data
 
     # Create directory used for camera
     mkdir /data/vendor/camera 0770 camera camera
+    mkdir /data/vendor/qcam 0770 camera camera
 
     # create QDMA dropbox
     mkdir /data/vendor/qdmastats 0700 system system
@@ -239,12 +240,6 @@ on post-fs-data
 
     # Create directory for apps access via QTEEConnector
     mkdir /data/vendor/qtee 0770 system system
-
-    #Create folder of camera
-    mkdir /data/vendor/camera 0770 camera camera
-
-    #Create folder for mm-qcamera-daemon
-    mkdir /data/misc/camera 0770 camera camera
 
     #Create directory for tftp
     mkdir /data/vendor/tombstones 0771 system system
@@ -396,9 +391,6 @@ on post-fs-data
 
     #Create dir for TUI
     mkdir /data/vendor/tui 0700 system system
-
-    #Start move time data to /data/vendor once post-fs-data done
-    start vendor.move_time_data
 
 on property:vendor.hw.fm.init=*
     write /sys/module/radio_iris_transport/parameters/fmsmd_set ${vendor.hw.fm.init}
@@ -578,14 +570,6 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-# Data Migration
-service vendor.move_wifi_data /system/bin/move_wifi_data.sh
-    class main
-    user  wifi
-    group wifi
-    disabled
-    oneshot
-
 service loc_launcher /system/vendor/bin/loc_launcher
     class late_start
     user gps
@@ -649,13 +633,6 @@ service time_daemon /system/vendor/bin/time_daemon
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
-
-service vendor.move_time_data /system/bin/move_time_data.sh
-    class main
-    user system
-    group system
-    disabled
-    oneshot
 
 service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     override

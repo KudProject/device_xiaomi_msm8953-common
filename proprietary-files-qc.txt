@@ -266,6 +266,7 @@ vendor/lib64/libgsl.so|f62be91c4fbc11fd30aca550e19ae51825abb759
 vendor/lib64/libhdr_tm.so|7a05d56d8305c8df87392b93929949178c336b83
 vendor/lib64/libllvm-glnext.so|d4a73c95f64d12edf1f76f9afecad0a5db5b90d3
 vendor/lib64/libllvm-qcom.so|2cd92fac3d99fcb5e95ea6481f416cd736a6af7d
+vendor/lib64/libmm-hdcpmgr.so|151cd14d6408bbfbd9e74a83a2e2668d9d832b3c
 vendor/lib64/librs_adreno.so|3669aa82d7684e799eae5b5c4df6a742bba90821
 vendor/lib64/librs_adreno_sha1.so|614c82c5480cad069170c85d523c2dc25a026383
 
