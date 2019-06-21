@@ -69,7 +69,7 @@ if [ "$DEVICE" = "mido" ]; then
     CAMERA2_SENSOR_MODULES="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib/libmmcamera2_sensor_modules.so
     sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
 
-    # Hax for camera sockets
+    # Hax for cam data location
     MM_QCAMERA_DAEMON="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/bin/mm-qcamera-daemon
     CAMERA_LIB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib
     sed -i "s|/data/misc/camera/cam_socket|/data/vendor/qcam/cam_socket|g" "$MM_QCAMERA_DAEMON"
