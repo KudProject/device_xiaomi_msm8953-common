@@ -150,8 +150,9 @@ vendor/bin/hvdcp_opti
 # Display - from oneplus3 - PKQ1.181203.001 - OnePlus3Oxygen_16.A.75_GLO_075_1904171151
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar|9cdc5914d59301e6a004d9bc134beb86d85df8c7
+-lib/vendor.display.color@1.0.so|f3acc62f826200030db8a565aeab4445c6fb53ef
 lib64/libsdm-disp-apis.so|513e09ccb5bffdd41d27871012b5a8510897dedf
-lib64/vendor.display.color@1.0.so|a41a76b08f60c0e8787d0e5b6a3155f11f58a5fc
+-lib64/vendor.display.color@1.0.so|a41a76b08f60c0e8787d0e5b6a3155f11f58a5fc
 lib64/vendor.display.color@1.1.so|388404f39cd0c2dd3ea9fc59ee950edf24f78a87
 lib64/vendor.display.color@1.2.so|da1c83747c7bb4a64cf380bdb889cb811b67bc2e
 lib64/vendor.display.postproc@1.0.so|f6dae960f3f4eea0d5d36aea4ac0a2e0039691f5
@@ -368,6 +369,7 @@ vendor/lib64/libperipheral_client.so
 vendor/bin/hw/vendor.display.color@1.0-service|2ca340c7fd7689ac8ddf36f948fd95a7cd3bfc2e
 vendor/bin/mm-pp-dpps|89656e2349f6c81fe9a26e7c70e304ea77e1079
 vendor/etc/init/vendor.display.color@1.0-service.rc
+vendor/lib/vendor.display.color@1.0.so|f3acc62f826200030db8a565aeab4445c6fb53ef
 vendor/lib64/libdisp-aba.so|95cafbc303cbf3017c7f10276454ef908b258b1c
 vendor/lib64/vendor.display.color@1.0.so|a41a76b08f60c0e8787d0e5b6a3155f11f58a5fc
 vendor/lib64/vendor.display.color@1.1.so|388404f39cd0c2dd3ea9fc59ee950edf24f78a87
